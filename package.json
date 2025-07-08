@@ -10,9 +10,9 @@
   "scripts": {
     "setup": "./setup.sh",
     "setup:windows": "setup.bat",
-    "dev": "./start-all.sh",
-    "dev:windows": "start-all.bat",
-    "dev:frontend": "./start-frontend.sh",
+    "dev": "vite",
+    "dev:all": "./start-all.sh",
+    "dev:frontend": "vite",
     "dev:backend": "cd server && npm run dev",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
