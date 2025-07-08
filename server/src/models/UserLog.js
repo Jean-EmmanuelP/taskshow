@@ -1,0 +1,15 @@
+const mongoose = require('mongoose');
+
+const UserLogSchema = new mongoose.Schema({
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    username: { type: String, required: true },
+    role: { type: String, enum: ['user', 'admin'], required: true },
+    action: { type: String, enum: ['login', 'logout'], required: true },
+    loginTime: { type: Date, default: null },
+    logoutTime: { type: Date, default: null },
+    ipAddress: { type: String, required: true },
+    tokenName: { type: String, required: true },
+    sessionDuration: { type: Number, default: 0 } // in minutes
+}, { timestamps: true });
+
+module.exports = mongoose.model('UserLog', UserLogSchema); 
